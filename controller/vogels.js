@@ -1,19 +1,22 @@
 const alleVogels = require("../data/index")
 
 
+// het gaat hem om kleine fouten, maar ze zorgen voor een resultaat! 
 const getVogels = (req,res)=>{
-    res.json(alleVogels.map((vogel)=>{
-        vogel.id,
-        vogel.soort
-    }))
+    res.json(alleVogels.map((vogel)=>({
+        id: vogel.id,
+        soor: vogel.soort
+    })))
 }
 
 const getOneVogel = (req,res)=>{
     res.json(alleVogels.find((vogel)=>vogel.id == req.params.ID))
 }
 
+// dit was niet gevraagd.
 const AddVogel = (req,res)=>{
     const newVogel ={
+        // newID verwacht 2 parameters, niet enkel de lijst
         id: newID(alleVogels),
         soort: req.body.soort,
         aantalKeerGespot: req.body.aantalKeerGespot,
@@ -36,8 +39,8 @@ const newID = (lijst,idProp)=>{
     return maxId
 }
 
+// wat wilde je hier doen? 
 const vogelGespot = (req,res)=>{
-    
     const gespot = alleVogels.map((vogel)=>{
         vogel.aantalKeerGespot
     })
@@ -48,10 +51,6 @@ const vogelGespot = (req,res)=>{
     })
 
     res.json(maxGespot+1)
-    
-
-    
-
 
 }
 

@@ -11,4 +11,4 @@ const vogels = [
   { id: 10, soort: "Vink", aantalKeerGespot: 8 },
 ];
 
-modules.exports = vogels;
+module.exports = vogels;

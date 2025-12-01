@@ -12,4 +12,4 @@ routes.put("/", ctrlspotten.AddVogel); // {soort}
 routes.get("/:ID", ctrlspotten.vogelGespot); // {ID}
 
 // exporteer het router object
-module.exports = routes;
+modules.exports = routes;

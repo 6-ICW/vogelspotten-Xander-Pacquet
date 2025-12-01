@@ -37,11 +37,19 @@ const newID = (lijst,idProp)=>{
 }
 
 const vogelGespot = (req,res)=>{
+    
     const gespot = alleVogels.map((vogel)=>{
         vogel.aantalKeerGespot
     })
     console.log(gespot);
+
+    const maxGespot = gespot.forEach((element)=>{
+        const maxGespot =max(element)
+    })
+
+    res.json(maxGespot+1)
     
+
     
 
 
@@ -51,6 +59,7 @@ module.exports = {
     getVogels,
     getOneVogel,
     AddVogel,
+    vogelGespot,
 
 
 }
